@@ -14,4 +14,6 @@ public interface NumOperationService {
     public Boolean isDuplicate(List<Integer> list);
 
     public Map<Integer,Long> countDuplicate(List<Integer> list);
+
+    public String getMinMaxSum(List<Integer> list);
 }

@@ -1,5 +1,6 @@
 package com.example.operations.problemsolving.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.LongSupplier;
@@ -44,5 +45,17 @@ public class NumOperationServiceImpl implements NumOperationService{
     @Override
     public Map<Integer, Long> countDuplicate(List<Integer> list) {
         return list.stream().collect(Collectors.groupingBy(i->i,Collectors.counting()));
+    }
+
+    @Override
+    public String getMinMaxSum(List<Integer> list) {
+        list.sort(Comparator.naturalOrder());
+        Long sum = list.stream().collect(Collectors.summingLong(Long::valueOf));
+        Long minsum = sum - list.get(list.size()-1);
+        Long maxsum = sum - list.get(0);
+        StringBuilder result = new StringBuilder();
+        result.append("Min sum: "+ minsum +"\n");
+        result.append("Max sum: "+ maxsum);
+        return result.toString();
     }
 }

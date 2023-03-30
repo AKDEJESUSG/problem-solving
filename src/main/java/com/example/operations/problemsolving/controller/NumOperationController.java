@@ -42,4 +42,9 @@ public class NumOperationController {
     public Map<Integer,Long> countDuplicate(@RequestBody NumericOperations nOp){
         return myNumOperation.countDuplicate(nOp.getIntegerList());
     }
+
+    @GetMapping("/minmaxsum")
+    public String getMinMaxSum(@RequestBody NumericOperations nOp){
+        return myNumOperation.getMinMaxSum(nOp.getIntegerList());
+    }
 }
