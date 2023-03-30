@@ -6,4 +6,5 @@ import lombok.Data;
 public class TextOperation {
     
     private String text;
+    private int limit;
 }

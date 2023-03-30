@@ -17,7 +17,12 @@ public class TextOperationController {
     TextOperationService textOpt;
 
     @GetMapping("/reverse")
-    public String reverse(@RequestBody TextOperation tO) {
+    public String getReverse(@RequestBody TextOperation tO) {
         return textOpt.reverse(tO.getText());
+    }
+
+    @GetMapping("/piramid")
+    public String getPiramid(@RequestBody TextOperation tO) {
+        return textOpt.piramid(tO.getLimit());
     }
 }
