@@ -39,12 +39,17 @@ public class NumOperationController {
         return myNumOperation.isDuplicate(nOp.getIntegerList());
     }
     @GetMapping("/countduplicate")
-    public Map<Integer,Long> countDuplicate(@RequestBody NumericOperations nOp){
+    public Map<Integer,Long> getcountDuplicate(@RequestBody NumericOperations nOp){
         return myNumOperation.countDuplicate(nOp.getIntegerList());
     }
 
     @GetMapping("/minmaxsum")
     public String getMinMaxSum(@RequestBody NumericOperations nOp){
         return myNumOperation.getMinMaxSum(nOp.getIntegerList());
+    }
+
+    @GetMapping("/posnegzero")
+    public Map<Integer,Long> getPosNegZero(@RequestBody NumericOperations nOp){
+        return myNumOperation.getPosNegZer(nOp.getIntegerList());
     }
 }

@@ -16,4 +16,6 @@ public interface NumOperationService {
     public Map<Integer,Long> countDuplicate(List<Integer> list);
 
     public String getMinMaxSum(List<Integer> list);
+
+    public Map<Integer, Long> getPosNegZer(List<Integer> list);
 }

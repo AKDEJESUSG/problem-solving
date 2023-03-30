@@ -58,4 +58,9 @@ public class NumOperationServiceImpl implements NumOperationService{
         result.append("Max sum: "+ maxsum);
         return result.toString();
     }
+
+    @Override
+    public Map<Integer, Long> getPosNegZer(List<Integer> list) {
+        return list.stream().collect(Collectors.groupingBy(Integer::signum,Collectors.counting()));
+    }
 }
