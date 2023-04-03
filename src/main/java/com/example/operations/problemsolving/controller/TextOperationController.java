@@ -1,5 +1,7 @@
 package com.example.operations.problemsolving.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,5 +26,10 @@ public class TextOperationController {
     @GetMapping("/piramid")
     public String getPiramid(@RequestBody TextOperation tO) {
         return textOpt.piramid(tO.getLimit());
+    }
+
+    @GetMapping("/countwords")
+    public Map<String,Long> getCountWords(@RequestBody TextOperation tO){
+        return textOpt.countWords(tO.getText());
     }
 }
