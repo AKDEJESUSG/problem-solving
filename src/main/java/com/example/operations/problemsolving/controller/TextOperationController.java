@@ -1,5 +1,6 @@
 package com.example.operations.problemsolving.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,13 @@ public class TextOperationController {
         return textOpt.countWords(tO.getText());
     }
 
-    @GetMapping(value="/isvalid")
+    @GetMapping("/isvalid")
     public Boolean isValid(@RequestBody TextOperation tO) {
         return textOpt.validPass(tO.getText());
     }
     
+    @GetMapping("/sort")
+    public List<String> sorted(@RequestBody TextOperation tO){
+        return textOpt.orderList(tO.getTextList());
+    }
 }

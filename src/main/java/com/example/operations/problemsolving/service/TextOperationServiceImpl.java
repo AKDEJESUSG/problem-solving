@@ -1,6 +1,7 @@
 package com.example.operations.problemsolving.service;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,6 +36,12 @@ public class TextOperationServiceImpl implements TextOperationService{
     public Boolean validPass(String text) {
         String regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-!@#$%^&()+ ])[A-Za-z\\d-!@#$%^&()+ ]{7,}$";
         return text.matches(regex);
+    }
+
+    @Override
+    public List<String> orderList(List<String> list) {
+        list.sort(Comparator.naturalOrder());
+        return list;
     }
     
 }
