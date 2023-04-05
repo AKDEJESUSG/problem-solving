@@ -30,5 +30,11 @@ public class TextOperationServiceImpl implements TextOperationService{
         List<String> words = Arrays.asList(text.split(" "));
         return words.stream().collect(Collectors.groupingBy(String::toLowerCase,Collectors.counting()));
     }
+
+    @Override
+    public Boolean validPass(String text) {
+        String regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-!@#$%^&()+ ])[A-Za-z\\d-!@#$%^&()+ ]{7,}$";
+        return text.matches(regex);
+    }
     
 }

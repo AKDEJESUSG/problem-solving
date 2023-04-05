@@ -9,4 +9,6 @@ public interface TextOperationService {
     public String piramid(int num);
 
     public Map<String,Long> countWords(String text);
+
+    public Boolean validPass(String text);
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.operations.problemsolving.model.TextOperation;
 import com.example.operations.problemsolving.service.TextOperationService;
 
+
 @RestController
 @RequestMapping("/text")
 public class TextOperationController {
@@ -32,4 +33,10 @@ public class TextOperationController {
     public Map<String,Long> getCountWords(@RequestBody TextOperation tO){
         return textOpt.countWords(tO.getText());
     }
+
+    @GetMapping(value="/isvalid")
+    public Boolean isValid(@RequestBody TextOperation tO) {
+        return textOpt.validPass(tO.getText());
+    }
+    
 }
