@@ -13,6 +13,7 @@ import com.example.operations.problemsolving.model.TextOperation;
 import com.example.operations.problemsolving.service.TextOperationService;
 
 
+
 @RestController
 @RequestMapping("/text")
 public class TextOperationController {
@@ -44,4 +45,10 @@ public class TextOperationController {
     public List<String> sorted(@RequestBody TextOperation tO){
         return textOpt.orderList(tO.getTextList());
     }
+
+    @GetMapping("/isduplicate")
+    public Boolean isDuplicate(@RequestBody TextOperation tO) {
+        return textOpt.isDuplicate(tO.getTextList());
+    }
+    
 }

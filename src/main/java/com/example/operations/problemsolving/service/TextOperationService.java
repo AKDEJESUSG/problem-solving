@@ -14,4 +14,6 @@ public interface TextOperationService {
     public Boolean validPass(String text);
 
     public List<String> orderList(List<String> list);
+
+    public Boolean isDuplicate(List<String> list);
 }

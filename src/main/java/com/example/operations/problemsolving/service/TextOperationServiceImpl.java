@@ -43,5 +43,10 @@ public class TextOperationServiceImpl implements TextOperationService{
         list.sort(Comparator.naturalOrder());
         return list;
     }
+
+    @Override
+    public Boolean isDuplicate(List<String> list) {
+        return list.stream().distinct().toList().size()<list.size();
+    }
     
 }
