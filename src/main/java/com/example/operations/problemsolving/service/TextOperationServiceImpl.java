@@ -48,5 +48,26 @@ public class TextOperationServiceImpl implements TextOperationService{
     public Boolean isDuplicate(List<String> list) {
         return list.stream().distinct().toList().size()<list.size();
     }
+
+    @Override
+    public String removePairs(String text) {
+        String ns =text;
+		boolean t = true;
+		int index = 0;
+		while(t){
+			if(index<ns.length() || index>ns.length()){
+				ns = ns.replace(ns.charAt(index)+""+ns.charAt(index), "");
+				if(ns.equals(text))
+					index++;
+				else{
+					index=0;
+					text=ns;
+				}
+			}else{
+				t=false;
+			}
+		}
+        return ns.equals("")?"Empty String":ns;
+    }
     
 }

@@ -16,4 +16,6 @@ public interface TextOperationService {
     public List<String> orderList(List<String> list);
 
     public Boolean isDuplicate(List<String> list);
+
+    public String removePairs(String text);
 }

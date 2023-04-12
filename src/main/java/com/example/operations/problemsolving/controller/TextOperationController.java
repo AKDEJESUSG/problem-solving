@@ -51,4 +51,8 @@ public class TextOperationController {
         return textOpt.isDuplicate(tO.getTextList());
     }
     
+    @GetMapping("/removepairs")
+    public String removePairs(@RequestBody TextOperation tO){
+        return textOpt.removePairs(tO.getText());
+    }
 }
